@@ -1,5 +1,5 @@
 
-import { StyleSheet, Text, View } from 'react-native';
+
 import { StyleSheet, Text, View, TextInput, Picker, Switch, TouchableOpacity } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ export default function App() {
       age: ''
     }
   })
-  // Generar la función que recibe los datos correctos
+  
   const onSubmit = data => {
     console.log(data)
     console.log(rol);
@@ -45,7 +45,7 @@ export default function App() {
         )}
         name='fullname'
       />
-      {/* Manejo de Errores de este input */}
+      
       {errors.fullname?.type == "required" && <Text style={{ color: 'red', fontSize: 15 }}>El nombre es obligatorio</Text>}
       {errors.fullname?.type == "minLength" && <Text style={{ color: 'red', fontSize: 15 }}>El nombre debe tener mínimo 3 caracteres</Text>}
       {errors.fullname?.type == "maxLength" && <Text style={{ color: 'red', fontSize: 15 }}>El nombre debe tener máximo 30 caracteres</Text>}
@@ -69,7 +69,7 @@ export default function App() {
         )}
         name='email'
       />
-      {/* Manejo de Errores de este input */}
+      
       {errors.email?.type == "required" && <Text style={{ color: 'red', fontSize: 15 }}>El correo es obligatorio</Text>}
       {errors.email?.type == "minLength" && <Text style={{ color: 'red', fontSize: 15 }}>El correo debe tener mínimo 6 caracteres</Text>}
       {errors.email?.type == "pattern" && <Text style={{ color: 'red', fontSize: 15 }}>El correo no es válido</Text>}
@@ -90,7 +90,7 @@ export default function App() {
         )}
         name='dofb'
       />
-      {/* Manejo de Errores de este input */}
+      
       {errors.dofb?.type == "pattern" && <Text style={{ color: 'red', fontSize: 15 }}>La fecha deber con formato dd/mm/aaaa</Text>}
 
       <Controller
@@ -113,7 +113,7 @@ export default function App() {
         )}
         name='password'
       />
-      {/* Manejo de Errores de este input */}
+      
       {errors.password?.type == "required" && <Text style={{ color: 'red', fontSize: 15 }}>La contraseña es obligatoria</Text>}
       {errors.password?.type == "pattern" && <Text style={{ color: 'red', fontSize: 15 }}>Debe tener entre 8 chars  </Text>}
 
@@ -135,7 +135,7 @@ export default function App() {
         )}
         name='salary'
       />
-      {/* Manejo de Errores de este input */}
+      
       {errors.salary?.type == "pattern" && <Text style={{ color: 'red', fontSize: 15 }}>Solo numeros</Text>}
 
       <Picker
@@ -150,7 +150,6 @@ export default function App() {
         <Text>Está activo?</Text>
         <Switch
           trackColor={{ false: "gray", true: "green" }}
-          // thumbColor={isActive ? "pink" : "red"}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggleSwitch}
           value={isActive}
